@@ -9,7 +9,7 @@ Normalise data
 ## Usage
 
 ```js
-var scale = require('scale-normalised');
+var normalise = require('normalise');
 
 normalise(2.5, [0, 5]); // returns 0.5
 normalise(3, [1, 2]); // returns 2
