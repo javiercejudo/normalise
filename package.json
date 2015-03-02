@@ -1,0 +1,31 @@
+{
+  "name": "normalise",
+  "version": "1.0.0",
+  "description": "Normalise data to [0, 1]",
+  "main": "src/normalise.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javiercejudo/normalise"
+  },
+  "keywords": [
+    "feature scaling",
+    "normalisation",
+    "normalization",
+    "scale",
+    "rescale"
+  ],
+  "author": "Javier Cejudo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javiercejudo/normalise/issues"
+  },
+  "homepage": "https://github.com/javiercejudo/normalise",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-mocha": "^2.0.0",
+    "should": "^5.0.0"
+  }
+}
