@@ -1,6 +1,6 @@
 {
   "name": "normalise",
-  "version": "1.0.1",
+  "version": "2.0.0-alpha",
   "description": "Normalise data to [0, 1]",
   "main": "src/normalise.js",
   "scripts": {
@@ -26,6 +26,10 @@
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-mocha": "^2.0.0",
-    "should": "^5.0.0"
+    "should": "^5.0.0",
+    "sinon": "^1.12.2"
+  },
+  "dependencies": {
+    "rescale-util": "~1.0.0"
   }
 }

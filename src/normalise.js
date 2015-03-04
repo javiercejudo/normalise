@@ -1,7 +1,15 @@
 'use strict';
 
-function normalise(x, scale) {
-  return (x - scale[0]) / (scale[1] - scale[0]);
-}
+var rescaleUtil = require('rescale-util');
 
-module.exports = normalise;
+exports.normalise = function normalise(x, scale) {
+  if (typeof scale === 'undefined') {
+    return x;
+  }
+
+  if (!rescaleUtil.isValidScale(scale)) {
+    throw new Error(rescaleUtil.getLastError());
+  }
+
+  return (x - scale[0]) / (scale[1] - scale[0]);
+};
