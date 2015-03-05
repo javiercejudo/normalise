@@ -16,6 +16,10 @@ var normalise = require('normalise').normalise;
 normalise(2.5, [0, 5]); // => 0.5
 normalise(3, [1, 2]); // => 2
 normalise(-3, [-5, 1]); // => 1/3
+
+normalise(Math.E); // => Math.E
+
+normalise(-3, 'invalid scale'); // => Error
 ```
 
 See [spec](test/spec.js).
