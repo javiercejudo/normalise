@@ -36,7 +36,7 @@ describe('normalising', function() {
     });
   });
 
-  describe('with a scale', function() {
+  describe('with valid scales', function() {
     var isValidScaleStub;
 
     afterEach(function () {
