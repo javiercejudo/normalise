@@ -39,14 +39,16 @@ describe('normalising', function() {
   describe('with valid scales', function() {
     var isValidScaleStub;
 
-    afterEach(function () {
+    beforeEach(function() {
+      isValidScaleStub = sinon.stub(rescaleUtil, 'isValidScale');
+      isValidScaleStub.returns(true);
+    });
+
+    afterEach(function() {
       isValidScaleStub.restore();
     });
 
     it('should normalise data', function() {
-      isValidScaleStub = sinon.stub(rescaleUtil, 'isValidScale');
-      isValidScaleStub.returns(true);
-
       normalise(2.5, [0, 5]).should.be.exactly(0.5);
       normalise(-3, [-5, 1]).should.be.exactly(1/3);
     });
