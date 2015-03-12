@@ -1,6 +1,8 @@
 # normalise
 
 [![Build Status](https://travis-ci.org/javiercejudo/normalise.svg)](https://travis-ci.org/javiercejudo/normalise)
+[![Coverage Status](https://coveralls.io/repos/javiercejudo/normalise/badge.svg?branch=master)](https://coveralls.io/r/javiercejudo/normalise?branch=master)
+[![Code Climate](https://codeclimate.com/github/javiercejudo/normalise/badges/gpa.svg)](https://codeclimate.com/github/javiercejudo/normalise)
 
 Normalise data to [0, 1], i.e. [feature scaling](http://en.wikipedia.org/wiki/Feature_scaling).
 
