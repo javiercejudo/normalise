@@ -73,7 +73,7 @@ describe('normalising', function() {
     it('should throw an error', function() {
       (function() {
         normalise(2, 2);
-      }).should.throw('an error');
+      }).should.throw(rescaleUtil.RescaleError, {message: 'an error'});
     });
   });
 });

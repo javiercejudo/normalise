@@ -21,7 +21,7 @@ normalise(-3, [-5, 1]); // => 1/3
 
 normalise(Math.E); // => Math.E
 
-normalise(-3, 'invalid scale'); // => Error
+normalise(-3, 'invalid scale'); // => RescaleError
 ```
 
 See [spec](test/spec.js).
