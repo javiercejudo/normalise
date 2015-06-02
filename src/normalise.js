@@ -18,7 +18,7 @@ exports.normalise = function normalise(x, scale) {
   }
 
   if (arbitraryPrecision.isAvailable()) {
-    return normaliseDecimal(x, scale);
+    return Number(normaliseDecimal(x, scale));
   }
 
   return normaliseNative(x, scale);

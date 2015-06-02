@@ -63,8 +63,8 @@ describe('normalising', function() {
       });
 
       it('should work with arbitrary precision', function() {
-        normalise(0.4, [0.3, 0.5]).should.eql(big(0.5));
-        normalise(-3, [-5, 1]).should.eql(big(1).div(3));
+        normalise(0.4, [0.3, 0.5]).should.be.exactly(1/2);
+        normalise(-3, [-5, 1]).should.be.exactly(1/3);
       });
     });
 
