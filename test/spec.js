@@ -5,14 +5,13 @@
 var should = require('should');
 var sinon = require('sinon');
 var rescaleUtil = require('rescale-util');
-var big = require('big.js');
 var arbitraryPrecision = require('rescale-arbitrary-precision');
-var normalise = require('../src/normalise.js').normalise;
+var normalise = require('../src/normalise').normalise;
 
 describe('normalising', function() {
   describe('without a scale', function() {
     it('should be the identity', function() {
-      normalise(1).should.be.exactly(1);
+      normalise(42).should.be.exactly(42);
       normalise(Math.E).should.be.exactly(Math.E);
     });
   });
