@@ -6,7 +6,7 @@ var rescaleUtil = require('rescale-util');
 var arbitraryPrecision = require('rescale-arbitrary-precision');
 
 var RescaleError = rescaleUtil.RescaleError;
-var decimal = arbitraryPrecision.load();
+var decimal = exports.decimal = arbitraryPrecision.load();
 
 exports.normalise = function normalise(x, scale) {
   if (typeof scale === 'undefined') {
