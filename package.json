@@ -34,8 +34,7 @@
     "sinon": "^1.12.2"
   },
   "dependencies": {
-    "rescale-arbitrary-precision": "^1.0.1",
-    "rescale-util": "^3.0.0"
+    "rescale-arbitrary-precision": "^1.0.1"
   },
   "optionalDependencies": {
     "big.js": "^3.0.2"
