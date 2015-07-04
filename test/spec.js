@@ -2,9 +2,10 @@
 
 'use strict';
 
+var decimalDep = process.env.DECIMAL ? process.env.DECIMAL : 'big.js';
+
 var should = require('should');
 var sinon = require('sinon');
-var big = require('big.js');
 var arbitraryPrecision = require('rescale-arbitrary-precision');
 var normalise = require('../src/normalise').normalise;
 
@@ -17,7 +18,7 @@ describe('normalising', function() {
   });
 
   describe('with valid scales', function() {
-    describe('when big.js is available', function() {
+    describe('when ' + decimalDep + ' is available', function() {
       var hasArbitraryPrecisionStub;
 
       beforeEach(function() {
@@ -32,18 +33,10 @@ describe('normalising', function() {
       it('should work with arbitrary precision', function() {
         normalise(0.4, [0.3, 0.5]).should.be.exactly(1/2);
         normalise(-3, [-5, 1]).should.be.exactly(1/3);
-
-        // the default precision is 20 (see http://mikemcl.github.io/big.js/#dp)
-        normalise(1e-24, [0, 1]).should.not.be.exactly(1e-24);
-
-        var defaultDP = big.DP;
-        big.DP = 24;
-        normalise(1e-24, [0, 1]).should.be.exactly(1e-24);
-        big.DP = defaultDP;
       });
     });
 
-    describe('when big.js is unavailable', function() {
+    describe('when ' + decimalDep + ' is unavailable', function() {
       var hasArbitraryPrecisionStub;
 
       beforeEach(function() {
@@ -58,7 +51,6 @@ describe('normalising', function() {
       it('should work with floating-point numbers', function() {
         normalise(0.4, [0.3, 0.5]).should.be.exactly(0.5000000000000001);
         normalise(-3, [-5, 1]).should.be.exactly(1/3);
-        normalise(1e-24, [0, 1]).should.be.exactly(1e-24);
       });
     });
   });
