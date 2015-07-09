@@ -4,8 +4,6 @@
 
 require('should');
 
-var arbitraryPrecision = require('linear-arbitrary-precision')
-
 var normaliseFactory = require('../src/normalise');
 var bigjsAdapter = require('bigjs-adapter')
 var floatingAdapter = require('floating-adapter');
