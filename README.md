@@ -13,15 +13,13 @@ Normalise data to [0, 1], i.e. [feature scaling](http://en.wikipedia.org/wiki/Fe
 ## Usage
 
 ```js
-var normalise = require('normalise').normalise;
+var normalise = require('normalise')(require('floating-adapter')).normalise;
 
 normalise(2.5, [0, 5]); // => 0.5
 normalise(3, [1, 2]); // => 2
 normalise(-3, [-5, 1]); // => 1/3
 
 normalise(Math.E); // => Math.E
-
-normalise(-3, 'invalid scale'); // => RescaleError
 ```
 
 See [spec](test/spec.js).

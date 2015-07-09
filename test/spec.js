@@ -2,15 +2,18 @@
 
 'use strict';
 
-var decimalDep = process.env.DECIMAL ? process.env.DECIMAL : 'big.js';
+require('should');
 
-var should = require('should');
-var sinon = require('sinon');
-var arbitraryPrecision = require('rescale-arbitrary-precision');
-var normalise = require('../src/normalise').normalise;
+var arbitraryPrecision = require('linear-arbitrary-precision')
+
+var normaliseFactory = require('../src/normalise');
+var bigjsAdapter = require('bigjs-adapter')
+var floatingAdapter = require('floating-adapter');
 
 describe('normalising', function() {
   describe('without a scale', function() {
+    var normalise = normaliseFactory(floatingAdapter).normalise;
+
     it('should be the identity', function() {
       normalise(42).should.be.exactly(42);
       normalise(Math.E).should.be.exactly(Math.E);
@@ -18,17 +21,8 @@ describe('normalising', function() {
   });
 
   describe('with valid scales', function() {
-    describe('when ' + decimalDep + ' is available', function() {
-      var hasArbitraryPrecisionStub;
-
-      beforeEach(function() {
-        hasArbitraryPrecisionStub = sinon.stub(arbitraryPrecision, 'isAvailable');
-        hasArbitraryPrecisionStub.returns(true);
-      });
-
-      afterEach(function() {
-        hasArbitraryPrecisionStub.restore();
-      });
+    describe('when arbitrary precision is available', function() {
+      var normalise = normaliseFactory(bigjsAdapter).normalise;
 
       it('should work with arbitrary precision', function() {
         normalise(0.4, [0.3, 0.5]).should.be.exactly(1/2);
@@ -36,17 +30,8 @@ describe('normalising', function() {
       });
     });
 
-    describe('when ' + decimalDep + ' is unavailable', function() {
-      var hasArbitraryPrecisionStub;
-
-      beforeEach(function() {
-        hasArbitraryPrecisionStub = sinon.stub(arbitraryPrecision, 'isAvailable');
-        hasArbitraryPrecisionStub.returns(false);
-      });
-
-      afterEach(function() {
-        hasArbitraryPrecisionStub.restore();
-      });
+    describe('when arbitrary precision is unavailable', function() {
+      var normalise = normaliseFactory(floatingAdapter).normalise;
 
       it('should work with floating-point numbers', function() {
         normalise(0.4, [0.3, 0.5]).should.be.exactly(0.5000000000000001);
