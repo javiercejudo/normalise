@@ -13,13 +13,14 @@ Normalise data to [0, 1], i.e. [feature scaling](http://en.wikipedia.org/wiki/Fe
 ## Usage
 
 ```js
-var normalise = require('normalise')(require('floating-adapter')).normalise;
+var Decimal = require('linear-arbitrary-precision')(require('floating-adapter'));
+var normalise = require('normalise')(Decimal).normalise;
 
-normalise(2.5, [0, 5]); // => 0.5
-normalise(3, [1, 2]); // => 2
-normalise(-3, [-5, 1]); // => 1/3
+normalise(2.5, [0, 5]); // => Decimal 0.5
+normalise(3, [1, 2]); // => Decimal 2
+normalise(-3, [-5, 1]); // => Decimal 1/3
 
-normalise(Math.E); // => Math.E
+normalise(Math.E); // => Decimal Math.E;
 ```
 
 See [spec](test/spec.js).
