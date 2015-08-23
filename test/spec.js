@@ -14,9 +14,9 @@ describe('normalising', function() {
     var Decimal = arbitraryPrecision(floatingAdapter);
     var normalise = normaliseFactory(Decimal).normalise;
 
-    it('should be the identity', function() {
-      normalise(42).val().val().should.be.exactly(42);
-      normalise(Math.E).val().val().should.be.exactly(Math.E);
+    it('should return a decimal-ised version of the input', function() {
+      normalise(42).equals(new Decimal('42')).should.be.exactly(true);
+      normalise(Math.E).equals(new Decimal(String(Math.E))).should.be.exactly(true);
     });
   });
 
