@@ -15,6 +15,7 @@ describe('normalising', function() {
     var normalise = normaliseFactory(Decimal).normalise;
 
     it('should return a decimal-ised version of the input', function() {
+      normalise(0.5).equals(new Decimal('0.5')).should.be.exactly(true);
       normalise(42).equals(new Decimal('42')).should.be.exactly(true);
       normalise(Math.E).equals(new Decimal(String(Math.E))).should.be.exactly(true);
     });

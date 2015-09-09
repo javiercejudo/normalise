@@ -3,12 +3,13 @@
 'use strict';
 
 var isUndefined = require('lodash.isundefined');
+var unitScale = require('unit-scale');
 
 module.exports = function factory(Decimal) {
   var api = {};
 
   api.normalise = function normalise(x, scale) {
-    scale = scale || [0, 1];
+    scale = scale || unitScale;
 
     var scale0 = new Decimal(scale[0].toString());
 
