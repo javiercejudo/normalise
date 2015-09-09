@@ -1,6 +1,6 @@
 {
   "name": "normalise",
-  "version": "7.0.2",
+  "version": "7.0.3",
   "description": "Normalise data to [0, 1]",
   "main": "src/normalise.js",
   "scripts": {
