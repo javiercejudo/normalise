@@ -16,11 +16,9 @@ Normalise data to [0, 1], i.e. [feature scaling](http://en.wikipedia.org/wiki/Fe
 var Decimal = require('linear-arbitrary-precision')(require('floating-adapter'));
 var normalise = require('normalise')(Decimal).normalise;
 
-normalise(2.5, [0, 5]); // => Decimal 0.5
-normalise(3, [1, 2]); // => Decimal 2
-normalise(-3, [-5, 1]); // => Decimal 1/3
-
-normalise(Math.E); // => Decimal Math.E;
+normalise([0, 5], 2.5); // => Decimal 0.5
+normalise([1, 2], 3); // => Decimal 2
+normalise([-5, 1], -3); // => Decimal 1/3
 ```
 
 See [spec](test/spec.js).

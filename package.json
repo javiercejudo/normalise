@@ -35,7 +35,6 @@
     "should": "^5.0.0"
   },
   "dependencies": {
-    "lodash.isundefined": "^3.0.1",
-    "unit-scale": "^1.0.0"
+    "lodash.isundefined": "^3.0.1"
   }
 }
