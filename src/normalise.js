@@ -2,8 +2,6 @@
 
 'use strict';
 
-var isUndefined = require('lodash.isundefined');
-
 module.exports = function factory(Decimal) {
   var api = {};
 
