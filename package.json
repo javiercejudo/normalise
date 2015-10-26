@@ -26,7 +26,7 @@
   "devDependencies": {
     "arbitrary-precision": "1.1.1",
     "bigjs-adapter": "2.2.0",
-    "floating-adapter": "1.2.0",
+    "floating-adapter": "1.2.1",
     "gulp": "3.9.0",
     "gulp-coveralls": "0.1.4",
     "gulp-istanbul": "0.10.2",
