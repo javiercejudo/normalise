@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/javiercejudo/normalise#readme",
   "devDependencies": {
-    "arbitrary-precision": "1.1.1",
+    "arbitrary-precision": "1.1.2",
     "bigjs-adapter": "2.2.0",
     "floating-adapter": "1.2.0",
     "gulp": "3.9.0",
