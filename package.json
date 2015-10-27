@@ -24,14 +24,14 @@
   },
   "homepage": "https://github.com/javiercejudo/normalise#readme",
   "devDependencies": {
-    "arbitrary-precision": "1.1.1",
-    "bigjs-adapter": "2.2.0",
-    "floating-adapter": "1.2.0",
-    "gulp": "3.9.0",
-    "gulp-coveralls": "0.1.4",
-    "gulp-istanbul": "0.10.2",
-    "gulp-mocha": "2.1.3",
-    "rimraf": "2.4.3",
-    "should": "7.1.1"
+    "arbitrary-precision": "^1.1.2",
+    "bigjs-adapter": "^2.2.1",
+    "floating-adapter": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-istanbul": "^0.10.2",
+    "gulp-mocha": "^2.1.3",
+    "rimraf": "^2.4.3",
+    "should": "^7.1.1"
   }
 }
