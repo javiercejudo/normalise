@@ -2,14 +2,17 @@
 
 'use strict';
 
+var toDecimalFactory = require('to-decimal-arbitrary-precision');
+
 module.exports = function factory(Decimal) {
+  var toDecimal = toDecimalFactory(Decimal);
   var api = {};
 
   api.normalise = function normalise(scale, x) {
-    var scale0 = new Decimal(scale[0].toString());
+    var scale0 = toDecimal(scale[0]);
 
-    return new Decimal(x.toString()).minus(scale0)
-      .div(new Decimal(scale[1].toString()).minus(scale0));
+    return toDecimal(x).minus(scale0)
+      .div(toDecimal(scale[1]).minus(scale0));
   };
 
   return api;
