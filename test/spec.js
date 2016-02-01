@@ -10,6 +10,17 @@ var floatingAdapter = require('floating-adapter');
 var normaliseFactory = require('../src/normalise');
 
 describe('normalising', function() {
+  describe('api', function() {
+    it('should be frozen', function() {
+      var Decimal = arbitraryPrecision(floatingAdapter);
+      var normalise = normaliseFactory(Decimal);
+
+      (function() {
+        normalise.normalise = function() {};
+      }).should.throw();
+    });
+  });
+
   describe('with valid scales', function() {
     describe('should support', function() {
       var Decimal = arbitraryPrecision(floatingAdapter);
